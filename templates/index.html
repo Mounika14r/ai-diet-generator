@@ -1,66 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-<<<<<<< HEAD
-<title>AI Personalized Diet Generator</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-=======
-<title>AI Diet Generator</title>
->>>>>>> 78f931f37229c0e4ed2e1a6c19aa6727bb61e917
-</head>
-
-<body>
-
-<<<<<<< HEAD
-<h1>AI Personalized Diet Generator</h1>
-
-<form method="POST">
-
-<label>Enter Weight (kg)</label>
-<input type="number" name="weight" required>
-
-<label>Goal</label>
-
-<select name="goal">
-<option value="weight_loss">Weight Loss</option>
-<option value="muscle_gain">Muscle Gain</option>
-<option value="maintain">Maintain Health</option>
-</select>
-
-<button type="submit">Generate Diet Plan</button>
-
-</form>
-
 {% if diet_plan %}
 
 <h2>Your Diet Plan</h2>
 
-<ul>
-{% for meal in diet_plan %}
-<li>{{ meal }}</li>
+{% for food in diet_plan %}
+
+<div>
+<h3>{{ food }}</h3>
+
+<img src="https://source.unsplash.com/200x200/?{{ food }}" alt="{{ food }}">
+
+</div>
+
 {% endfor %}
-</ul>
 
 {% endif %}
-
-=======
-<h2>AI Personalized Diet Generator</h2>
-
-<form action="/generate" method="post">
-
-Age:
-<input type="number" name="age"><br><br>
-
-Height:
-<input type="number" name="height"><br><br>
-
-Weight:
-<input type="number" name="weight"><br><br>
-
-<button type="submit">Generate Diet</button>
-
-</form>
-
->>>>>>> 78f931f37229c0e4ed2e1a6c19aa6727bb61e917
-</body>
-</html>

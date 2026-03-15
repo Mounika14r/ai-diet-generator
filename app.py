@@ -10,11 +10,13 @@ def home():
         goal=request.form["goal"]
 
         if goal=="weight_loss":
-            diet_plan=["Oats","Salad","Fruits","Vegetables"]
+            diet_plan=["Oats","Vegetable Salad","Fruits","Soup"]
+
         elif goal=="muscle_gain":
-            diet_plan=["Eggs","Rice","Paneer","Milk"]
+            diet_plan=["Eggs","Chicken","Rice","Milk"]
+
         else:
-            diet_plan=["Balanced diet","Fruits","Rice","Vegetables"]
+            diet_plan=["Rice","Dal","Vegetables","Fruits"]
 
     return render_template("index.html", diet_plan=diet_plan)
 
