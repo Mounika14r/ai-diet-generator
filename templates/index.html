@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Personalized Diet Generator</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>AI Personalized Diet Generator</h1>
+
+<form method="POST">
+
+<label>Enter Weight (kg)</label>
+<input type="number" name="weight" required>
+
+<label>Goal</label>
+
+<select name="goal">
+<option value="weight_loss">Weight Loss</option>
+<option value="muscle_gain">Muscle Gain</option>
+<option value="maintain">Maintain Health</option>
+</select>
+
+<button type="submit">Generate Diet Plan</button>
+
+</form>
+
+{% if diet_plan %}
+
+<h2>Your Diet Plan</h2>
+
+<ul>
+{% for meal in diet_plan %}
+<li>{{ meal }}</li>
+{% endfor %}
+</ul>
+
+{% endif %}
+
+</body>
+</html>
